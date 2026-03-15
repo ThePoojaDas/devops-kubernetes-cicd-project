@@ -10,14 +10,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
 
-    - name: Checkout Code
-      uses: actions/checkout@v3
+      - name: Build Docker Image
+        run: docker build -t devops-k8s-project -f Dockerfile .
 
-    - name: Build Docker Image
-      run: |
-        docker build -t devops-k8s-project .
-
-    - name: Run Docker Container
-      run: |
-        docker run -d -p 5000:5000 devops-k8s-project
+      - name: Run Docker Container
+        run: docker run -d -p 5000:5000 devops-k8s-project
