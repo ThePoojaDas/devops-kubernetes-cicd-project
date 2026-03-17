@@ -166,7 +166,7 @@ Build the Docker image:
 ```bash
 docker build -t devops-k8s-project ./docker
 ```
-![Docker](screenshots/docker-image.png)
+![Docker Image](screenshots/docker-image.png)
 
 Verify the image was created:
 
@@ -179,8 +179,11 @@ Run the container locally to test:
 ```bash
 docker run -d -p 5000:5000 devops-k8s-project
 ```
+![Dockerfile Setup](screenshots/dockerfile-setup.png)
 
 > ✅ App accessible at `http://localhost:5000`
+
+![App Running](screenshots/app-running.png)
 
 ---
 
@@ -195,7 +198,6 @@ Verify the node is ready:
 ```bash
 kubectl get nodes
 ```
-
 ---
 
 ### 4️⃣ Deploy Application to Kubernetes
@@ -223,6 +225,7 @@ Restart the deployment after loading image:
 ```bash
 kubectl rollout restart deployment devops-app
 ```
+![Kubernetes Pods](screenshots/kubernetes-pods.png)
 
 View pod logs:
 
@@ -239,6 +242,7 @@ kubectl apply -f service.yaml
 kubectl get svc
 minikube service devops-service
 ```
+![Kubernetes Service](screenshots/kubernetes-service.png)
 
 ---
 
@@ -250,7 +254,6 @@ git add .
 git commit -m "initial commit"
 git push origin main
 ```
-
 ---
 
 ### 7️⃣ GitHub Actions CI/CD Pipeline
@@ -263,7 +266,7 @@ Pipeline steps:
 - Run container
 
 After fixing the Dockerfile path issue (see Troubleshooting), the pipeline ran end-to-end successfully.
-
+![CI/CD Pipeline](screenshots/cicd-pipeline.png)
 ---
 
 ### 8️⃣ Install Prometheus + Grafana Monitoring Stack via Helm
@@ -479,13 +482,13 @@ mv DevOps\ App\ Monitoring.-1773591756164.json grafana-dashboards/devops-app-mon
 ![Pods](screenshots/kubernetes-pods.png)
 
 ### Kubernetes Service
-![Service](screenshots/k8s-svc.png)
+![Kubernetes Service](screenshots/kubernetes-service.png)
 
 ### Application Running in Browser
 ![App](screenshots/app-running.png)
 
 ### GitHub Actions Pipeline
-![CI/CD](screenshots/github-actions.png)
+![GitHub Actions Final](screenshots/github-actions-final.png)
 
 ### Prometheus Targets
 ![Prometheus](screenshots/prometheus-targets.png)
@@ -494,8 +497,7 @@ mv DevOps\ App\ Monitoring.-1773591756164.json grafana-dashboards/devops-app-mon
 ![Grafana](screenshots/grafana-dashboard.png)
 
 ### Alert Triggered (Firing)
-![Alert](screenshots/alert-firing.png)
-
+![Alert Firing](screenshots/alert-firing1.png)
 ---
 
 ## 📊 Grafana Dashboard Import
