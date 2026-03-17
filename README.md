@@ -166,6 +166,7 @@ Build the Docker image:
 ```bash
 docker build -t devops-k8s-project ./docker
 ```
+![Docker](screenshots/docker-image.png)
 
 Verify the image was created:
 
