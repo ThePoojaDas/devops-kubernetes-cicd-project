@@ -10,6 +10,8 @@
 
 > **End-to-end production-grade DevOps pipeline** — Docker Containerization → GitHub Actions CI/CD → Kubernetes Deployment → Prometheus Metrics → Grafana Dashboards & Alerting
 
+![First Page](screenshots/First-page.png)
+
 ---
 
 ## 📌 Project Overview
@@ -326,7 +328,7 @@ sum(rate(container_cpu_usage_seconds_total{namespace="default"}[5m])) by (pod)
 ```bash
 while true; do curl http://127.0.0.1:57164; done
 ```
-
+![Grafana All Dashboards](screenshots/grafana-all-dashboards.png)
 ---
 
 ### 1️⃣2️⃣ Configure Grafana Alerting
@@ -495,6 +497,9 @@ mv DevOps\ App\ Monitoring.-1773591756164.json grafana-dashboards/devops-app-mon
 
 ### Grafana Dashboard
 ![Grafana](screenshots/grafana-dashboard.png)
+![Dashboards Node 2](screenshots/dashboards-node2.png)
+![Dashboards Node 1](screenshots/dashboards-node1.png)
+![Dashboards Node 2](screenshots/dashboards-node2.png)
 
 ### Alert Triggered (Firing)
 ![Alert Firing](screenshots/alert-firing1.png)
